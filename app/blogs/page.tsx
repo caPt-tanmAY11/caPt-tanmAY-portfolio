@@ -43,14 +43,12 @@ const articles = [
 export default function Articles() {
   return (
     <div className="min-h-dvh font-inter flex flex-col auth-bg">
-      {/* Page Title */}
       <div className="pt-16 mt-15 mb-10 text-center text-white">
         <h1 className="text-3xl sm:text-4xl font-semibold">
           Blogs<span className="text-[#4ff1f1]">.</span>
         </h1>
       </div>
 
-      {/* Content Wrapper */}
       <div className="relative flex-1 px-4 pt-6 pb-50">
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
           {articles.map((article, index) => (
@@ -62,7 +60,6 @@ export default function Articles() {
               viewport={{ once: true }}
               className="flex flex-col h-full backdrop-blur-2xl bg-gradient-to-br from-white/10 via-white/5 to-transparent border border-white/10 rounded-2xl overflow-hidden text-white group transition-all duration-300 hover:border-[#4ff1f1]/40"
             >
-              {/* Cover Image */}
               <div className="relative w-full h-48 overflow-hidden">
                 <Image
                   src={article.image}
@@ -72,7 +69,6 @@ export default function Articles() {
                 />
               </div>
 
-              {/* Content */}
               <div className="p-6 flex flex-col flex-1">
                 <div>
                   <h2 className="text-lg font-semibold  transition">

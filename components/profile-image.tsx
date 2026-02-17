@@ -22,7 +22,6 @@ export default function ProfileImage({
     <div
       className={className}
       style={{
-        // The container needs to be large enough to show the offset ring
         width: size + (gap + ringWidth) * 2,
         height: size + (gap + ringWidth) * 2,
         display: "flex",
@@ -36,11 +35,8 @@ export default function ProfileImage({
           width: size,
           height: size,
           borderRadius: section == "header" ? "50%" : "10%",
-          // 1. Create the ring using outline
           outline: `${ringWidth}px solid white`,
-          // 2. Push the ring away to create the transparent gap
           outlineOffset: `${gap}px`,
-          // Ensure the image itself stays circular
           overflow: "hidden", 
         }}
       >

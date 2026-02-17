@@ -35,7 +35,6 @@ export default function ProjectCard({
         hover:shadow-[0_20px_60px_rgba(79,241,241,0.15)]
       "
     >
-      {/* Image */}
       <div className="relative w-full h-56 overflow-hidden">
         <Image
           src={image}
@@ -44,11 +43,9 @@ export default function ProjectCard({
           className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
 
-        {/* Image Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent" />
       </div>
 
-      {/* Content */}
       <div className="p-6 flex flex-col flex-1 text-white">
         <div className="space-y-4">
           <h3 className="text-xl font-semibold">{title}</h3>
@@ -74,7 +71,6 @@ export default function ProjectCard({
           </div>
         </div>
 
-        {/* Buttons */}
         <div className="flex gap-3 pt-6 mt-auto">
           <a
             href={githubUrl}

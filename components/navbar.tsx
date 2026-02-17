@@ -21,14 +21,13 @@ export default function LandingHeader() {
   const pathname = usePathname();
   const [activeHash, setActiveHash] = useState<string>("");
 
-  // Scroll listener for section links
   useEffect(() => {
     const sections = navItems
       .filter((item) => item.href.startsWith("/#"))
-      .map((item) => item.href.slice(2)); // remove "/#"
+      .map((item) => item.href.slice(2));
 
     const handleScroll = () => {
-      const scrollPos = window.scrollY + 150; // offset for header
+      const scrollPos = window.scrollY + 150;
       let current = "";
 
       sections.forEach((id) => {
@@ -42,15 +41,15 @@ export default function LandingHeader() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    handleScroll(); // initial check
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const isActive = (href: string) => {
     if (href.startsWith("/#")) {
-      return activeHash === href.slice(2); // compare section id
+      return activeHash === href.slice(2);
     }
-    return pathname === href; // for full page links
+    return pathname === href;
   };
 
   return (
@@ -60,7 +59,6 @@ export default function LandingHeader() {
           bg-white/5 backdrop-blur-xl border border-white/10
           shadow-[0_8px_32px_rgba(0,0,0,0.3)]">
 
-          {/* Logo */}
           <h1 className="text-lg sm:text-xl font-semibold tracking-tight relative group">
             <Link href="/">
               Tanmay Vishwakarma
@@ -68,7 +66,6 @@ export default function LandingHeader() {
             </Link>
           </h1>
 
-          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8 text-sm">
             {navItems.map((item) => {
               const active = isActive(item.href);
@@ -91,7 +88,6 @@ export default function LandingHeader() {
             })}
           </nav>
 
-          {/* Mobile Button */}
           <button
             onClick={() => setOpen((v) => !v)}
             className="md:hidden p-2 rounded-lg hover:bg-white/10 transition"
@@ -101,7 +97,6 @@ export default function LandingHeader() {
           </button>
         </div>
 
-        {/* Mobile Dropdown */}
         <AnimatePresence>
           {open && (
             <motion.div

@@ -53,14 +53,12 @@ const artworks = [
 export default function Artwork() {
   return (
     <div className="min-h-dvh font-inter flex flex-col auth-bg">
-      {/* Heading */}
       <div className="pt-16 mt-15 pb-12 text-center text-white">
         <h1 className="text-3xl sm:text-4xl font-semibold">
           Artwork<span className="text-[#4ff1f1]">.</span>
         </h1>
       </div>
 
-      {/* Grid Section */}
       <div className="relative flex-1 px-4 pb-50">
         <div className="max-w-7xl mx-auto grid grid-cols-12 auto-rows-[200px] md:auto-rows-[260px] lg:auto-rows-[300px] gap-6">
           {artworks.map((art, index) => {
@@ -87,7 +85,6 @@ export default function Artwork() {
   }
 `}
               >
-                {/* Image */}
                 <Image
                   src={art.image}
                   alt={art.title}
@@ -95,10 +92,8 @@ export default function Artwork() {
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
 
-                {/* Soft Gradient Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-80 group-hover:opacity-100 transition duration-300" />
 
-                {/* Title */}
                 <div className="absolute bottom-0 left-0 right-0 p-6">
                   <h2 className="text-white text-lg md:text-xl font-semibold translate-y-3 group-hover:translate-y-0 transition duration-300">
                     {art.title}

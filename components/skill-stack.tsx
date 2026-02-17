@@ -82,7 +82,6 @@ export default function SkillStack() {
   return (
     <section className="w-full py-14 sm:py-16 lg:py-22 text-white">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-        {/* Heading */}
         <div className="text-center mb-14 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
             Skill Stack<span className="text-[#4ff1f1]">.</span>
@@ -92,13 +91,11 @@ export default function SkillStack() {
           </p>
         </div>
 
-        {/* Categories */}
         <div className="space-y-12 sm:space-y-14">
           {Object.entries(skills).map(([category, items]) => {
             const isBackend = category === "Backend";
             return (
               <div key={category} className="relative">
-                {/* 🔥 Backend Background Glow */}
                 {isBackend && (
                   <div
                     className="
@@ -117,12 +114,10 @@ export default function SkillStack() {
                   />
                 )}
 
-                {/* Category Title */}
                 <h3 className="text-base sm:text-lg font-medium text-[#4ff1f1] mb-5 sm:mb-6">
                   {category}
                 </h3>
 
-                {/* Grid */}
                 <div
                   className="
                 grid 
@@ -155,7 +150,6 @@ export default function SkillStack() {
                       p-3 sm:p-4
                     "
                     >
-                      {/* Icon Container (Responsive) */}
                       <div
                         className="
                       relative 
@@ -185,7 +179,6 @@ export default function SkillStack() {
                         />
                       </div>
 
-                      {/* Skill Name */}
                       <span className="text-white/70 group-hover:text-white transition leading-tight">
                         {skill.name}
                       </span>

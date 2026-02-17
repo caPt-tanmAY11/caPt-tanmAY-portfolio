@@ -16,6 +16,7 @@ import ProjectCard from "@/components/project-card";
 import togethrImg from "@/public/togethr.png";
 import portfolioImg from "@/public/portfolio.png";
 import EducationSection from "@/components/education-section";
+import { toast } from "sonner";
 
 export default function Home() {
   const [form, setForm] = useState({
@@ -45,11 +46,11 @@ export default function Home() {
         throw new Error("Failed to send message");
       }
 
-      alert("Message sent successfully!");
+      toast.success("Message sent successfully!")
       setForm({ name: "", email: "", message: "" });
     } catch (err) {
       console.error(err);
-      alert("Something went wrong. Please try again later.");
+      toast.error("Something went wrong. Please try again later.");
     } finally {
       setLoading(false);
     }
@@ -57,14 +58,12 @@ export default function Home() {
 
   return (
     <div className="relative min-h-screen bg-[#070512] text-white font-inter overflow-x-hidden">
-      {/* ===== Background Glow ===== */}
       <div className="pointer-events-none absolute inset-0 z-0">
         <div className="absolute -top-40 -left-40 h-96 w-96 rounded-full blur-[160px] opacity-60 bg-[#2b9f9f]" />
         <div className="absolute top-20 -right-40 h-[28rem] w-[28rem] rounded-full blur-[180px] opacity-50 bg-[#19b4b4]" />
         <div className="absolute bottom-20 left-0.5 h-[30rem] w-[30rem] rounded-full blur-[160px] opacity-40 bg-[#25c7c7]" />
       </div>
 
-      {/* ================= HERO ================= */}
       <section className="relative z-10 w-full pt-28 sm:pt-36 lg:pt-40 pb-20">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-20">
@@ -131,7 +130,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      {/* ================= ABOUT ================= */}
+
       <section id="about" className="relative z-10 w-full py-24 sm:py-32">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
@@ -225,14 +224,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ================= SKILLS ================= */}
       <section id="skills" className="relative z-10 w-full py-6">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           <SkillStack />
         </div>
       </section>
 
-      {/* ================= PROJECTS ================= */}
       <section id="projects" className="relative z-10 w-full py-10">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold text-center mb-16">
@@ -280,11 +277,9 @@ export default function Home() {
         <EducationSection />
       </section>
 
-      {/* ================= CONTACT ================= */}
       <section id="contact" className="relative z-10 w-full py-28 sm:py-36">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            {/* Image (Top on mobile, Right on desktop) */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
@@ -295,7 +290,6 @@ export default function Home() {
               <ProfileImage src={contactMePic} size={300} section="aboutme" />
             </motion.div>
 
-            {/* Form (Below image on mobile, Left on desktop) */}
             <motion.form
               onSubmit={handleSubmit}
               initial={{ opacity: 0, y: 40 }}

@@ -54,21 +54,17 @@ export const metadata: Metadata = {
     title: "Tanmay Vishwakarma | Full-Stack Developer",
     description:
       "Portfolio of Tanmay Vishwakarma - Full-Stack Developer building scalable systems, modern web apps, and exploring AI/ML.",
-    url: "https://capt-tanmay-portfolio.vercel.app/", // ← replace
+    url: "https://capt-tanmay-portfolio.vercel.app/",
     siteName: "Tanmay Vishwakarma Portfolio",
     images: [
       {
-        url: "/og-image.png", // create a clean branded OG image
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Tanmay Vishwakarma - Full Stack Developer Portfolio",
       },
     ],
     type: "website",
-  },
-
-  icons: {
-    icon: "/favicon.ico",
   },
 
   category: "technology",
