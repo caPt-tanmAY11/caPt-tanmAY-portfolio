@@ -52,7 +52,7 @@ const artworks = [
 
 export default function Artwork() {
   return (
-    <div className="min-h-dvh flex flex-col auth-bg">
+    <div className="min-h-dvh font-inter flex flex-col auth-bg">
       {/* Heading */}
       <div className="pt-16 mt-15 pb-12 text-center text-white">
         <h1 className="text-3xl sm:text-4xl font-semibold">
@@ -61,7 +61,7 @@ export default function Artwork() {
       </div>
 
       {/* Grid Section */}
-      <div className="relative flex-1 px-4 pb-20">
+      <div className="relative flex-1 px-4 pb-50">
         <div className="max-w-7xl mx-auto grid grid-cols-12 auto-rows-[200px] md:auto-rows-[260px] lg:auto-rows-[300px] gap-6">
           {artworks.map((art, index) => {
             const isFeatured =

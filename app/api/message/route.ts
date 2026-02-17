@@ -15,7 +15,7 @@ export async function POST(req: Request) {
 export async function GET() {
   await connectDB();
 
-  const projects = await Message.find().sort({ createdAt: -1 });
+  const messages = await Message.find().sort({ createdAt: -1 });
 
-  return NextResponse.json(projects);
+  return NextResponse.json({ success: true, data: messages });
 }

@@ -23,6 +23,8 @@ export default function ProjectCard({
       className="
         group
         relative
+        flex flex-col
+        h-full
         backdrop-blur-2xl
         bg-gradient-to-br from-white/10 via-white/5 to-transparent
         border border-white/10
@@ -47,36 +49,33 @@ export default function ProjectCard({
       </div>
 
       {/* Content */}
-      <div className="p-6 space-y-4 text-white">
-        <h3 className="text-xl font-semibold group-hover:text-[#4ff1f1] transition">
-          {title}
-        </h3>
+      <div className="p-6 flex flex-col flex-1 text-white">
+        <div className="space-y-4">
+          <h3 className="text-xl font-semibold">{title}</h3>
 
-        <p className="text-sm text-white/60 leading-relaxed">
-          {description}
-        </p>
+          <p className="text-sm text-white/60 leading-relaxed">{description}</p>
 
-        {/* Tech Stack */}
-        <div className="flex flex-wrap gap-2 pt-2">
-          {tech.map((item) => (
-            <span
-              key={item}
-              className="
-                text-xs
-                px-3 py-1
-                rounded-full
-                bg-white/10
-                border border-white/10
-                text-white/70
-              "
-            >
-              {item}
-            </span>
-          ))}
+          <div className="flex flex-wrap gap-2 pt-2">
+            {tech.map((item) => (
+              <span
+                key={item}
+                className="
+            text-xs
+            px-3 py-1
+            rounded-full
+            bg-white/10
+            border border-white/10
+            text-white/70
+          "
+              >
+                {item}
+              </span>
+            ))}
+          </div>
         </div>
 
         {/* Buttons */}
-        <div className="flex gap-3 pt-4">
+        <div className="flex gap-3 pt-6 mt-auto">
           <a
             href={githubUrl}
             target="_blank"

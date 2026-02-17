@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 
 import blog1 from "@/public/blog1.png";
 import blog2 from "@/public/blog2.png";
@@ -26,14 +27,14 @@ const articles = [
   {
     title: "More Than Ethan Hunt: Tom Cruise, the Real Hero in Real Life",
     description:
-      "How Tom Cruise isn’t just performing insane stunts — he’s redefining passion, purpose, and what it means to be unstoppable in the real world.",
+      "How Tom Cruise isn’t just performing insane stunts - he’s redefining passion, purpose, and what it means to be unstoppable in the real world.",
     image: blog2,
     link: "https://medium.com/illumination/more-than-ethan-hunt-tom-cruise-the-real-hero-in-real-life-4526c7931715",
   },
   {
     title: "The Human Side of Coding: Things They Don’t Teach You in Tutorials",
     description:
-      "The mindset, mistakes, and underrated strategies that shape better developers — not just coders",
+      "The mindset, mistakes, and underrated strategies that shape better developers - not just coders",
     image: blog1,
     link: "https://medium.com/illumination/the-human-side-of-coding-things-they-dont-teach-you-in-tutorials-361652798a02",
   },
@@ -41,7 +42,7 @@ const articles = [
 
 export default function Articles() {
   return (
-    <div className="min-h-dvh flex flex-col auth-bg">
+    <div className="min-h-dvh font-inter flex flex-col auth-bg">
       {/* Page Title */}
       <div className="pt-16 mt-15 mb-10 text-center text-white">
         <h1 className="text-3xl sm:text-4xl font-semibold">
@@ -50,7 +51,7 @@ export default function Articles() {
       </div>
 
       {/* Content Wrapper */}
-      <div className="relative flex-1 px-4 py-12">
+      <div className="relative flex-1 px-4 pt-6 pb-50">
         <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
           {articles.map((article, index) => (
             <motion.div
@@ -59,7 +60,7 @@ export default function Articles() {
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: index * 0.15 }}
               viewport={{ once: true }}
-              className="flex flex-col h-full backdrop-blur-2xl bg-gradient-to-br from-white/10 via-white/5 to-transparent border border-white/10 rounded-2xl overflow-hidden text-white group transition-all duration-300 hover:border-[#4ff1f1]/40 hover:shadow-[0_0_15px_rgba(79,241,241,0.15)]"
+              className="flex flex-col h-full backdrop-blur-2xl bg-gradient-to-br from-white/10 via-white/5 to-transparent border border-white/10 rounded-2xl overflow-hidden text-white group transition-all duration-300 hover:border-[#4ff1f1]/40"
             >
               {/* Cover Image */}
               <div className="relative w-full h-48 overflow-hidden">
@@ -74,7 +75,7 @@ export default function Articles() {
               {/* Content */}
               <div className="p-6 flex flex-col flex-1">
                 <div>
-                  <h2 className="text-lg font-semibold group-hover:text-[#4ff1f1] transition">
+                  <h2 className="text-lg font-semibold  transition">
                     {article.title}
                   </h2>
 
@@ -87,9 +88,13 @@ export default function Articles() {
                   href={article.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="auth-form-main-btn mt-auto text-white rounded-lg py-2 px-6 font-medium transition-all duration-300 hover:scale-[1.03] active:scale-95 inline-block text-center"
+                  className="group auth-form-main-btn mt-auto text-white rounded-lg py-2 px-6 font-medium transition-all duration-300 hover:scale-[1.03] active:scale-95 inline-flex items-center gap-2 justify-center"
                 >
-                  Read Blog →
+                  Read Blog
+                  <ArrowRight
+                    size={18}
+                    className="transition-transform duration-300 group-hover:translate-x-1"
+                  />
                 </a>
               </div>
             </motion.div>

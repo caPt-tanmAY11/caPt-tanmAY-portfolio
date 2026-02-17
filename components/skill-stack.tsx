@@ -80,9 +80,8 @@ const skills = {
 
 export default function SkillStack() {
   return (
-    <section className="w-full py-20 sm:py-24 lg:py-28 text-white">
+    <section className="w-full py-14 sm:py-16 lg:py-22 text-white">
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-
         {/* Heading */}
         <div className="text-center mb-14 sm:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
@@ -95,16 +94,37 @@ export default function SkillStack() {
 
         {/* Categories */}
         <div className="space-y-12 sm:space-y-14">
-          {Object.entries(skills).map(([category, items]) => (
-            <div key={category}>
-              
-              {/* Category Title */}
-              <h3 className="text-base sm:text-lg font-medium text-[#4ff1f1] mb-5 sm:mb-6">
-                {category}
-              </h3>
+          {Object.entries(skills).map(([category, items]) => {
+            const isBackend = category === "Backend";
+            return (
+              <div key={category} className="relative">
+                {/* 🔥 Backend Background Glow */}
+                {isBackend && (
+                  <div
+                    className="
+          pointer-events-none
+          absolute 
+          -left-20 
+          top-10 
+          h-72 
+          w-72 
+          bg-[#25c7c7] 
+          opacity-60 
+          blur-[140px] 
+          rounded-full 
+          z-0
+        "
+                  />
+                )}
 
-              {/* Grid */}
-              <div className="
+                {/* Category Title */}
+                <h3 className="text-base sm:text-lg font-medium text-[#4ff1f1] mb-5 sm:mb-6">
+                  {category}
+                </h3>
+
+                {/* Grid */}
+                <div
+                  className="
                 grid 
                 grid-cols-3 
                 sm:grid-cols-4 
@@ -113,11 +133,12 @@ export default function SkillStack() {
                 gap-4 
                 sm:gap-5 
                 md:gap-6
-              ">
-                {items.map((skill) => (
-                  <div
-                    key={skill.name}
-                    className="
+              "
+                >
+                  {items.map((skill) => (
+                    <div
+                      key={skill.name}
+                      className="
                       group
                       aspect-square
                       flex flex-col items-center justify-center
@@ -133,25 +154,27 @@ export default function SkillStack() {
                       hover:-translate-y-1
                       p-3 sm:p-4
                     "
-                  >
-                    {/* Icon Container (Responsive) */}
-                    <div className="
+                    >
+                      {/* Icon Container (Responsive) */}
+                      <div
+                        className="
                       relative 
                       w-10 h-10 
                       sm:w-12 sm:h-12 
                       md:w-14 md:h-14 
                       lg:w-16 lg:h-16 
                       mb-2 sm:mb-3
-                    ">
-                      <Image
-                        src={skill.icon}
-                        alt={skill.name}
-                        fill
-                        sizes="(max-width: 640px) 40px,
+                    "
+                      >
+                        <Image
+                          src={skill.icon}
+                          alt={skill.name}
+                          fill
+                          sizes="(max-width: 640px) 40px,
                                (max-width: 768px) 48px,
                                (max-width: 1024px) 56px,
                                64px"
-                        className="
+                          className="
                           object-contain 
                           opacity-80 
                           group-hover:opacity-100 
@@ -159,22 +182,20 @@ export default function SkillStack() {
                           group-hover:scale-110 
                           duration-300
                         "
-                      />
+                        />
+                      </div>
+
+                      {/* Skill Name */}
+                      <span className="text-white/70 group-hover:text-white transition leading-tight">
+                        {skill.name}
+                      </span>
                     </div>
-
-                    {/* Skill Name */}
-                    <span className="text-white/70 group-hover:text-white transition leading-tight">
-                      {skill.name}
-                    </span>
-
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
-
-            </div>
-          ))}
+            );
+          })}
         </div>
-
       </div>
     </section>
   );
