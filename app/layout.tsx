@@ -3,6 +3,7 @@ import { Poppins, Inter } from "next/font/google";
 import "./globals.css";
 import Footer from "@/components/footer";
 import LandingHeader from "@/components/navbar";
+import { Toaster } from "@/components/ui/sonner";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -25,56 +26,53 @@ const inter = Inter({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
-// export const metadata: Metadata = {
-//   title: {
-//     default: "togethr | Find Teammates. Build Together.",
-//     template: "%s | togethr",
-//   },
-//   description:
-//     "togethr is a platform for students and developers to find trusted hackathon teammates, collaborate on real projects, and build meaningful things together.",
-//   keywords: [
-//     "hackathon teams",
-//     "developer collaboration",
-//     "student developers",
-//     "project collaboration",
-//     "find teammates",
-//     "hackathons",
-//     "full stack projects",
-//     "developer community",
-//   ],
-//   authors: [{ name: "Tanmay Vishwakarma" }],
-//   creator: "Tanmay Vishwakarma",
-//   metadataBase: new URL("https://togethr-psi.vercel.app"),
+export const metadata: Metadata = {
+  title: {
+    default: "Tanmay Vishwakarma | Full-Stack Developer",
+    template: "%s | Tanmay Vishwakarma",
+  },
+  description:
+    "Tanmay Vishwakarma is a Computer Engineering student at SPIT Mumbai specializing in Full-Stack Development and AI/ML. Explore projects, blogs, and scalable systems built with modern technologies.",
 
-//   openGraph: {
-//     title: "togethr | Find Teammates. Build Together.",
-//     description:
-//       "Form trusted hackathon teams, collaborate on real projects, and connect with serious builders on togethr.",
-//     url: "https://togethr-psi.vercel.app",
-//     siteName: "togethr",
-//     images: [
-//       {
-//         url: "/og-image.png",
-//         width: 1200,
-//         height: 630,
-//         alt: "togethr - Build together with the right people",
-//       },
-//     ],
-//     type: "website",
-//   },
+  keywords: [
+    "Tanmay Vishwakarma",
+    "Full Stack Developer",
+    "MERN Stack Developer",
+    "Next.js Developer",
+    "SPIT Mumbai",
+    "Computer Engineering Student",
+    "AI ML Developer",
+    "Web Developer Portfolio",
+    "Backend Developer",
+  ],
 
-//   twitter: {
-//     card: "summary_large_image",
-//     title: "togethr | Find Teammates. Build Together.",
-//     description:
-//       "A platform for students and developers to form trusted teams and collaborate on real projects.",
-//     images: ["/og-image.png"],
-//   },
+  authors: [{ name: "Tanmay Vishwakarma" }],
+  creator: "Tanmay Vishwakarma",
+  metadataBase: new URL("https://capt-tanmay-portfolio.vercel.app/"),
 
-//   icons: {
-//     icon: "/favicon.svg",
-//   },
-// };
+  openGraph: {
+    title: "Tanmay Vishwakarma | Full-Stack Developer",
+    description:
+      "Portfolio of Tanmay Vishwakarma - Full-Stack Developer building scalable systems, modern web apps, and exploring AI/ML.",
+    url: "https://capt-tanmay-portfolio.vercel.app/", // ← replace
+    siteName: "Tanmay Vishwakarma Portfolio",
+    images: [
+      {
+        url: "/og-image.png", // create a clean branded OG image
+        width: 1200,
+        height: 630,
+        alt: "Tanmay Vishwakarma - Full Stack Developer Portfolio",
+      },
+    ],
+    type: "website",
+  },
+
+  icons: {
+    icon: "/favicon.ico",
+  },
+
+  category: "technology",
+};
 
 export default function RootLayout({
   children,
@@ -103,6 +101,7 @@ export default function RootLayout({
             </div>
             <Footer />
           </main>
+          <Toaster position="top-center" richColors />
       </body>
     </html>
   );
