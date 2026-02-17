@@ -46,7 +46,7 @@ export default function Home() {
         throw new Error("Failed to send message");
       }
 
-      toast.success("Message sent successfully!")
+      toast.success("Message sent successfully!");
       setForm({ name: "", email: "", message: "" });
     } catch (err) {
       console.error(err);
@@ -67,7 +67,6 @@ export default function Home() {
       <section className="relative z-10 w-full pt-28 sm:pt-36 lg:pt-40 pb-20">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 items-center gap-12 lg:gap-20">
-            {/* Image (Top on mobile, Right on desktop) */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -78,7 +77,6 @@ export default function Home() {
               <ProfileImage src={profilePicMain} size={280} section="header" />
             </motion.div>
 
-            {/* Text (Below image on mobile, Left on desktop) */}
             <motion.div
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
@@ -166,10 +164,11 @@ export default function Home() {
                   console.log("Hello World!");
                 </p>
 
+                <p>Welcome to the codebase of Tanmay Vishwakarma. 💫</p>
+
                 <p>
-                  Welcome to the codebase of Tanmay Vishwakarma. 💫 I’m a second year
-                  Computer Engineering student at SPIT Mumbai with a strong
-                  interest in Full-Stack Development and AI/ML.
+                  I’m a second year Computer Engineering student at SPIT Mumbai
+                  with a strong interest in Full-Stack Development and AI/ML.
                 </p>
 
                 <p>
@@ -198,21 +197,21 @@ export default function Home() {
 
               <div className="pt-6 mt-6 border-t border-white/10 flex gap-5">
                 <a
-                  href="https://www.linkedin.com/"
+                  href="https://www.linkedin.com/in/tanmay-vishwakarma-a1363a2a8/"
                   target="_blank"
                   className="p-3 rounded-full bg-white/5 border border-white/10 hover:border-[#4ff1f1]/40 transition"
                 >
                   <Linkedin size={20} />
                 </a>
                 <a
-                  href="https://github.com/"
+                  href="https://github.com/caPt-tanmAY11"
                   target="_blank"
                   className="p-3 rounded-full bg-white/5 border border-white/10 hover:border-[#4ff1f1]/40 transition"
                 >
                   <Github size={20} />
                 </a>
                 <a
-                  href="https://instagram.com/"
+                  href="https://instagram.com/capt_tanmayy"
                   target="_blank"
                   className="p-3 rounded-full bg-white/5 border border-white/10 hover:border-[#4ff1f1]/40 transition"
                 >
@@ -256,7 +255,13 @@ export default function Home() {
               image={togethrImg}
               title="togethr"
               description="A community-focused platform enabling students and developers to form hackathon teams, find suitable teammates, and collaborate on projects."
-              tech={["Next.js", "TanStack Query", "Prisma ORM", "PostgreSQL (Neon)", "Better-auth"]}
+              tech={[
+                "Next.js",
+                "TanStack Query",
+                "Prisma ORM",
+                "PostgreSQL (Neon)",
+                "Better-auth",
+              ]}
               githubUrl="https://github.com/caPt-tanmAY11/togethr-app"
               demoUrl="https://togethr-psi.vercel.app/"
             />
