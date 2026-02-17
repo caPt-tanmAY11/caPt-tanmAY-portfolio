@@ -48,7 +48,7 @@ export const metadata: Metadata = {
 
   authors: [{ name: "Tanmay Vishwakarma" }],
   creator: "Tanmay Vishwakarma",
-  metadataBase: new URL("https://capt-tanmay-portfolio.vercel.app/"),
+  metadataBase: new URL("https://capt-tanmay-portfolio.vercel.app"),
 
   openGraph: {
     title: "Tanmay Vishwakarma | Full-Stack Developer",
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     siteName: "Tanmay Vishwakarma Portfolio",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "https://capt-tanmay-portfolio.vercel.app/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Tanmay Vishwakarma - Full Stack Developer Portfolio",
