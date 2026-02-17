@@ -81,7 +81,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="max-w-2xl order-2 lg:order-1 text-center lg:text-left"
+              className="max-w-2xl order-2 lg:order-1 text-center lg:text-left mx-auto"
             >
               <p className="text-xs sm:text-sm uppercase tracking-widest text-white/50 mb-4">
                 Full Stack Developer • AI/ML Learner • Community-Driven
